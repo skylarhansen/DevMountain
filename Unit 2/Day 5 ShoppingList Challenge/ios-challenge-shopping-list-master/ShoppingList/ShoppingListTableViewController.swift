@@ -40,7 +40,6 @@ class ShoppingListTableViewController: UITableViewController, ListTableViewCellD
     alert.addAction(submitAction)
     alert.addAction(dismissAction)
     self.presentViewController(alert, animated: true, completion: nil)
-    
   }
   
   func haveItemValueChanged(cell: ShoppingListTableViewCell, haveItem: Bool) {
@@ -57,7 +56,8 @@ class ShoppingListTableViewController: UITableViewController, ListTableViewCellD
   // MARK: - Table view data source
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return ShoppingController.sharedController.fetchedResultsController.sections?.count ?? 0
+    guard let sections = ShoppingController.sharedController.fetchedResultsController.sections else { return 0 }
+    return sections.count
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,7 +87,9 @@ class ShoppingListTableViewController: UITableViewController, ListTableViewCellD
   }
   
   override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    guard let sections = ShoppingController.sharedController.fetchedResultsController.sections, let index = Int(sections[section].name) else { return nil }
+    
+    guard let sections = ShoppingController.sharedController.fetchedResultsController.sections,
+      let index = Int(sections[section].name) else { return nil }
     
     if index == 0 {
       return "Keep Cold"
@@ -96,6 +98,7 @@ class ShoppingListTableViewController: UITableViewController, ListTableViewCellD
     } else {
       return nil
     }
+    
   }
   
   // MARK: - NSFetchedResultsControllerDelegate methods
