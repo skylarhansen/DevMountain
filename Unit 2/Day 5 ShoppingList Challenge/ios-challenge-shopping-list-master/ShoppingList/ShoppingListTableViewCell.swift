@@ -29,10 +29,13 @@ class ShoppingListTableViewCell: UITableViewCell {
   }
   
   
-  @IBAction func haveItemBoxChecked(sender: AnyObject) {
+  
+  @IBAction func haveItemBoxChecked(sender: UIButton) {
     guard let list = shopping else { return }
     delegate?.haveItemValueChanged(self, haveItem: list.haveItem.boolValue)
   }
+  
+
   
   override func setSelected(selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)

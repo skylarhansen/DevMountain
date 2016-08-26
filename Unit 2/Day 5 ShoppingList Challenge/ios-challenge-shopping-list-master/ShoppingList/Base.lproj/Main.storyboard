@@ -38,7 +38,7 @@
                                                     <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                                     <state key="normal" image="incomplete"/>
                                                     <connections>
-                                                        <action selector="haveItemBoxCheckedWithSender:" destination="XfH-DG-PJN" eventType="touchUpInside" id="nOB-W5-2pl"/>
+                                                        <action selector="haveItemBoxChecked:" destination="XfH-DG-PJN" eventType="touchUpInside" id="hLQ-jv-Rsb"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -65,7 +65,7 @@
                     <navigationItem key="navigationItem" title="Shopping List" id="WQi-w6-c4v">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iOV-6J-sUq">
                             <connections>
-                                <action selector="addButtonTappedWithSender:" destination="83c-BT-zBm" id="VS1-H1-eA0"/>
+                                <action selector="buttonTapped:" destination="83c-BT-zBm" id="y13-BF-W3w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

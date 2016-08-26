@@ -11,7 +11,8 @@ import CoreData
 
 class ShoppingListTableViewController: UITableViewController, ListTableViewCellDelegate, NSFetchedResultsControllerDelegate {
   
-  @IBAction func addButtonTapped(sender: AnyObject) {
+  
+  @IBAction func buttonTapped(sender: UIBarButtonItem) {
     
     var itemTextField: UITextField?
     var categoryTextField: UITextField?
